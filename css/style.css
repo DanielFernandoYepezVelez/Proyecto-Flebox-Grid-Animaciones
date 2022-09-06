@@ -1,0 +1,1120 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+/** GLOBALES */
+
+body {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 4rem auto;
+    background-color: #2f363e;
+    font-family: 'Roboto', sans-serif;
+    /* perspective: 600px; */
+    /* background: linear-gradient(-25deg, cyan 0%, black 50%, cyan 50%, black 100%); */
+}
+
+h1 {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+
+/** UTILITIES */
+
+.container {
+    margin: 0 auto;
+    /* max-width: 1200px; */
+    max-width: 120rem;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    justify-content: space-between;
+}
+
+.header__container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 #0f0, 0 0 0 #0f0, 0 0 0 #0f0, 0 0 0 #0f0, 0 0 0 #0f0, 0 0 25px #0f0;
+}
+
+.header__container img:hover {
+    cursor: pointer;
+}
+
+.navegation__container {
+    width: 54rem;
+    height: 11rem;
+    /* margin-top: 10rem; */
+    padding: 0 2rem;
+    border-radius: 30px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(255, 255, 255, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.navegation__unorganized--list {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navegation__unorganized--list .unorganized__list {
+    width: 8rem;
+    list-style: none;
+    position: relative;
+}
+
+.unorganized__list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-direction: column;
+}
+
+.unorganized__list .unorganized__icon {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    transition: 0.5s;
+    color: #aaaaaa;
+    font-size: 2.5rem;
+    position: absolute;
+    border-radius: 50%;
+    align-items: center;
+    transition-delay: 0.2s;
+    justify-content: center;
+}
+
+.unorganized__list.active .unorganized__icon {
+    color: #ffffff;
+    transition-delay: 0s;
+    background-color: #29fd53;
+    transform: translateY(-30px);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25), inset 2px 2px 3px rgba(255, 255, 255, 0.25), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.unorganized__list .unorganized__icon::before {
+    content: '';
+    inset: 1rem;
+    transition: 0.5s;
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: #2f363e;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5), inset 2px 2px 3px rgba(255, 255, 255, 0.25), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.unorganized__list.active .unorganized__icon::before {
+    transform: scale(1);
+}
+
+.unorganized__list .unorganized__text {
+    opacity: 0;
+    color: #2f363e;
+    transition: 0.5s;
+    padding: 2px 10px;
+    font-size: 1.6rem;
+    position: absolute;
+    border-radius: 12px;
+    transition-delay: 0s;
+    transform: translateY(40px);
+    background-color: #ffffff;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.unorganized__list.active .unorganized__text {
+    opacity: 1;
+    transition-delay: 0.2s;
+    transform: translateY(38px);
+}
+
+.navegation__unorganized--list .unorganized__list::before {
+    content: '';
+    top: 7rem;
+    left: 50%;
+    width: .5rem;
+    height: .5rem;
+    transition: 0.5s;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #222222;
+    transform: translateX(-50%);
+}
+
+.navegation__unorganized--list .unorganized__list.active::before {
+    background-color: #0f0;
+    box-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0, 0 0 50px #0f0;
+}
+
+.main__container {
+    gap: 3rem;
+    display: flex;
+    padding: 2rem;
+    margin: 5rem auto;
+    /* border: blue solid 1px; */
+}
+
+.section__container--one figure {
+    text-align: center;
+    /* margin-bottom: 2rem; */
+}
+
+.section__container--one {
+    padding: 2rem 6rem;
+    text-align: justify;
+    /* border: #ffffff solid 1px; */
+}
+
+.section__container--one {
+    text-align: center;
+}
+
+.section__container--two {
+    padding: 2rem;
+    display: grid;
+    column-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    /* border: #ffffff solid 1px; */
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/** ========== BOX MAIN ========== */
+
+.box__container--areaMain {
+    width: 15rem;
+    height: 37rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box__two--main::before,
+.box__two--main::after,
+.box__one--main::before,
+.box__one--main::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__two--main {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.8);
+}
+
+.box__one--main {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    left: 1.5rem;
+    bottom: 2rem;
+    transform: scale(0.7);
+}
+
+.box__one--main,
+.box__two--main {
+    perspective: 60rem;
+}
+
+.box__two--main::before,
+.box__one--main::before {
+    animation-name: animate1__main;
+}
+
+.box__two--main::after,
+.box__one--main::after {
+    animation-name: animate2__main;
+}
+
+.box__one--main::before,
+.box__one--main::after {
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSAaGNFrXl3aHTeT2nPeVJizoGplBj_uV2nBJR86gxIQaXoWOcCJfmhIs-jM50FKlVavFFxoHES07J4EVnVeK_og0aSSI8ZsLQ4OmlKb4Fo6fKomdKx6c13SUzCyD7uy_1IlihYjKLBJoAzDr6pZ9T7XRsdNs4KGrMTRxH6j7wSP3ve-YLgbxO2zNfWA/s1920/01%20ROG%20launches%202%20new%20gaming%20laptops%20at%20For%20Those%20Who%20Dare%20Boundless%20virtual%20event-min.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate1__main {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate2__main {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOXES LAYOUT ========== */
+
+.box__container--area {
+    width: 15rem;
+    height: 15rem;
+    line-height: 10rem;
+}
+
+
+/** ========== BOX #1 ========== */
+
+.box__two::before,
+.box__two::after,
+.box__one::before,
+.box__one::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__two {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__one {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__one,
+.box__two {
+    perspective: 60rem;
+}
+
+.box__two::before,
+.box__one::before {
+    animation-name: animate1;
+}
+
+.box__two::after,
+.box__one::after {
+    animation-name: animate2;
+}
+
+.box__one::before,
+.box__one::after {
+    background: url('https://static-geektopia.com/storage/t/p/115/115702/784x441/weU1pYsMnRk.webp');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate1 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate2 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #2 ========== */
+
+.box__four::before,
+.box__four::after,
+.box__three::before,
+.box__three::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__four {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__three {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__three,
+.box__four {
+    perspective: 60rem;
+}
+
+.box__four::before,
+.box__three::before {
+    animation-name: animate3;
+}
+
+.box__four::after,
+.box__three::after {
+    animation-name: animate4;
+}
+
+.box__three::before,
+.box__three::after {
+    background: url('https://i.ytimg.com/vi/VSVfBObYFE4/maxresdefault.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate3 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate4 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #3 ========== */
+
+.box__six::before,
+.box__six::after,
+.box__five::before,
+.box__five::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__six {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__five {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__five,
+.box__six {
+    perspective: 60rem;
+}
+
+.box__six::before,
+.box__five::before {
+    animation-name: animate5;
+}
+
+.box__six::after,
+.box__five::after {
+    animation-name: animate6;
+}
+
+.box__five::before,
+.box__five::after {
+    background: url('https://t.ctcdn.com.br/sFhGnKyLQuPu5Or8LVYXqY9Jg3s=/20x1:739x406/512x288/smart/filters:format(webp)/i392835.png');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate5 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate6 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #4 ========== */
+
+.box__eight::before,
+.box__eight::after,
+.box__seven::before,
+.box__seven::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__eight {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__seven {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__seven,
+.box__eight {
+    perspective: 60rem;
+}
+
+.box__eight::before,
+.box__seven::before {
+    animation-name: animate7;
+}
+
+.box__eight::after,
+.box__seven::after {
+    animation-name: animate8;
+}
+
+.box__seven::before,
+.box__seven::after {
+    background: url('https://pcsystemcolombia.com/wp-content/uploads/2022/04/portatiles-gaming.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate7 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate8 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #5 ========== */
+
+.box__ten::before,
+.box__ten::after,
+.box__nine::before,
+.box__nine::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__ten {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__nine {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__nine,
+.box__ten {
+    perspective: 60rem;
+}
+
+.box__ten::before,
+.box__nine::before {
+    animation-name: animate9;
+}
+
+.box__ten::after,
+.box__nine::after {
+    animation-name: animate10;
+}
+
+.box__nine::before,
+.box__nine::after {
+    background: url('https://acis.org.co/portal/sites/default/files/ROG%20Strix%20Hero%20III_G531_Social%20material%20FINAL%20.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate9 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate10 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #6 ========== */
+
+.box__twelve::before,
+.box__twelve::after,
+.box__eleven::before,
+.box__eleven::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__twelve {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__eleven {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__eleven,
+.box__twelve {
+    perspective: 60rem;
+}
+
+.box__twelve::before,
+.box__eleven::before {
+    animation-name: animate11;
+}
+
+.box__twelve::after,
+.box__eleven::after {
+    animation-name: animate12;
+}
+
+.box__eleven::before,
+.box__eleven::after {
+    background: url('https://geekculture.co/wp-content/uploads/2019/08/ROG-laptops-2019-1.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate11 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate12 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #7 ========== */
+
+.box__14::before,
+.box__14::after,
+.box__13::before,
+.box__13::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__14 {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__13 {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__13,
+.box__14 {
+    perspective: 60rem;
+}
+
+.box__14::before,
+.box__13::before {
+    animation-name: animate13;
+}
+
+.box__14::after,
+.box__13::after {
+    animation-name: animate14;
+}
+
+.box__13::before,
+.box__13::after {
+    background: url('https://images.bisnis-cdn.com/posts/2019/07/11/1122849/image004_600x400.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate13 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate14 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #8 ========== */
+
+.box__16::before,
+.box__16::after,
+.box__15::before,
+.box__15::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__16 {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__15 {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__15,
+.box__16 {
+    perspective: 60rem;
+}
+
+.box__16::before,
+.box__15::before {
+    animation-name: animate15;
+}
+
+.box__16::after,
+.box__15::after {
+    animation-name: animate16;
+}
+
+.box__15::before,
+.box__15::after {
+    background: url('https://cdn.mos.cms.futurecdn.net/qsxSkCQ23sgJuKsoDykiQD.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate15 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate16 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** ========== BOX #9 ========== */
+
+.box__18::before,
+.box__18::after,
+.box__17::before,
+.box__17::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    -webkit-background-size: 800%;
+    background-size: 800%;
+    animation-duration: 4s;
+    background-position: 0 0;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50% -200px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
+}
+
+.box__18 {
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transform: scale(0.4);
+}
+
+.box__17 {
+    transform: translateZ(0);
+    position: relative;
+    top: 2rem;
+    transform: scale(0.3);
+}
+
+.box__17,
+.box__18 {
+    perspective: 60rem;
+}
+
+.box__18::before,
+.box__17::before {
+    animation-name: animate17;
+}
+
+.box__18::after,
+.box__17::after {
+    animation-name: animate18;
+}
+
+.box__17::before,
+.box__17::after {
+    background: url('https://static-geektopia.com/storage/t/p/125/125743/816x381/rog-strix-scar-15-2022.webp');
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center center;
+}
+
+@keyframes animate17 {
+    from {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+    to {
+        transform: rotateY(-90deg);
+        background-position: -400% 0;
+    }
+}
+
+@keyframes animate18 {
+    from {
+        transform: rotateY(90deg);
+        background-position: 400% 0;
+    }
+    to {
+        transform: rotateY(0);
+        background-position: 0 0;
+    }
+}
+
+
+/** GALLERY */
+
+.main__container--gallery {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 3rem; */
+    /* padding: 2rem; */
+    /* margin: 5rem auto; */
+}
+
+.section__container--gallery {
+    padding: 2rem;
+    display: grid;
+    row-gap: 4rem;
+    column-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    /* border: #ffffff solid 1px; */
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/** TESTIMONIALS */
+
+.testimonial__container div {
+    gap: 3rem;
+    display: flex;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+    border: #ffffff solid 1px;
+    justify-content: space-evenly;
+}
+
+.testimonial__image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 #0f0, 0 0 0 #0f0, 0 0 0 #0f0, 0 0 0 #0f0, 0 0 0 #0f0, 0 0 25px #0f0;
+}
+
+
+/** CONTACT */
+
+.main__container--contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form__container form {
+    display: grid;
+    margin-bottom: 4rem;
+    /* border: #ffffff solid 1px; */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form__label {
+    margin-bottom: 2rem;
+}
+
+.form__label label {
+    display: block;
+}
+
+.form__label input,
+textarea {
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+}
+
+.footer__container {
+    height: 8rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    line-height: 8rem;
+    max-width: 120rem;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(255, 255, 255, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
