@@ -40,6 +40,7 @@ h1 {
 
 .header__container {
     display: flex;
+    padding: 0 4rem;
     align-items: center;
     /* justify-content: space-around; */
     justify-content: space-between;
@@ -1117,4 +1118,54 @@ textarea {
     text-align: center;
     border-radius: 30px;
     box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(255, 255, 255, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+
+
+/** MEDIA QUERIES */
+@media screen and (max-width: 980px) {
+
+    /** PAGE #1 */
+    .header__container {
+        width: min-content;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header__container a {
+        margin-bottom: 2rem;
+    }
+
+    .navegation__container {
+        width: 47rem;
+    }
+
+    .main__container {
+        /* display: block; */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: min-content;
+        /* margin: 0; */
+        padding: 0;
+    }
+
+    .section__container--one {
+        padding: 0 4rem;
+        text-align: justify;
+    }
+
+    .section__container--two {
+        padding: 2rem 0;
+    }
+    
+    /** PAGE #2 */
+    .section__container--gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /** PAGE #3 */
+    .container {
+        min-width: 55rem;
+    }
 }
